@@ -10,7 +10,7 @@ Follow the steps below to get your project up and running.
 Clone the project repository to your local machine using the following command:
 
 ```bash
-git clone 'repo-link'
+git clone https://github.com/Abouelez/laravel-stripe-ajax.git
 ```
 
 ### 2. Navigate to the project directory
@@ -18,7 +18,7 @@ git clone 'repo-link'
 Once the repository is cloned, change into the project directory:
 
 ```bash
-cd project-directory
+cd laravel-stripe-ajax
 ```
 
 ### 3. Install project dependencies
