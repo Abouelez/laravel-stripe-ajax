@@ -8,6 +8,7 @@ use App\Http\Requests\CreateProductRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class ApiProductController extends ProductController
 {
@@ -21,9 +22,15 @@ class ApiProductController extends ProductController
 
     //Section 4 method that return all products
     //List all products
-    function index()
+    function index(Request $request)
     {
-        $products = $this->all();
+
+        if ($request->has('min_price')) {
+            $products = Product::get_products_up_price($request['min_price'] * 100)->paginate(10);
+        } else {
+            $products = $this->all();
+        }
+
         return response()->json($products, 200);
     }
 
@@ -37,4 +44,5 @@ class ApiProductController extends ProductController
             'user_id' => Auth::user()['id']
         ], 201);
     }
+
 }

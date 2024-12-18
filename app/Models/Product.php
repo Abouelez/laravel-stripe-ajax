@@ -15,6 +15,11 @@ class Product extends Model
 
     public static function get_products_up_price($amount)
     {
-        return self::where('price', '>', $amount)->get();
+        return self::where('price', '>', $amount);
+    }
+
+    public function getPriceAttribute($val)
+    {
+        return $val / 100;
     }
 }

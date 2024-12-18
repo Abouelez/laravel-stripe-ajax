@@ -14,7 +14,7 @@ Route::post('/register', [RegisteredUserController::class, 'store']);
 Route::post('/login', [AuthTokenController::class, 'login']);
 
 Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/products', [ApiProductController::class, 'index']);
+    Route::post('/logout', [AuthTokenController::class, 'logout']);
 
-    Route::get('/products', [ApiProductController::class, 'index'])->middleware('auth:sanctum');
-    Route::post('/logout', [AuthTokenController::class, 'logout'])->middleware('auth:sanctum');
 });

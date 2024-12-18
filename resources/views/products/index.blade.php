@@ -35,7 +35,7 @@
                                             </a>
 
                                             <!-- Buy Button -->
-                                            <a href="{{ route('checkout') }}"
+                                            <a href="{{ route('payment') }}"
                                                 class="text-white bg-green-500 hover:bg-green-600 px-2 py-1 rounded text-xs font-semibold transition duration-300">
                                                 Buy
                                             </a>
